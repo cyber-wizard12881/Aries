@@ -13,7 +13,7 @@ namespace Aries
             this.json = json;
         }
 
-        public object Path(string jsonPath)
+        public object Find(string jsonPath)
         {
             PathToken[] pathTokens = TokenHelper.BuildTokens(jsonPath);
             JsonDocument jsonDocument;

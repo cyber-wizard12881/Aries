@@ -24,7 +24,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             Assert.IsNotNull(outputJson);
             Assert.AreEqual(validJson, Convert.ToString(outputJson));
@@ -36,7 +36,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$";
             Json json = new Json(invalidJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             Assert.IsNotNull(outputJson);
             Assert.AreEqual("Input Json is Malformed! ... hence Aborting the JsonPath Processing ...!!!", Convert.ToString(outputJson));
@@ -48,7 +48,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             string expectedOutputJson = File.ReadAllText(@"test/inputs/WeatherFragment.json");
 
@@ -62,7 +62,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather";
             Json json = new Json(invalidJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             Assert.IsNotNull(outputJson);
             Assert.AreEqual("Input Json is Malformed! ... hence Aborting the JsonPath Processing ...!!!", Convert.ToString(outputJson));
@@ -74,7 +74,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Climate";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = @"[ ""Hot"", ""Sunny"", ""Windy"", ""Humid"", ""Cloudy"" ]";
 
@@ -88,7 +88,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Climate";
             Json json = new Json(invalidJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             Assert.IsNotNull(outputJson);
             Assert.AreEqual("Input Json is Malformed! ... hence Aborting the JsonPath Processing ...!!!", Convert.ToString(outputJson));
@@ -100,7 +100,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Climate[2]";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = @"Windy";
 
@@ -114,7 +114,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Description[1]";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = @"{
           ""Message"": ""Sunny Day""
@@ -130,7 +130,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Description[3].Message";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = @"Humid Night";
 
@@ -144,7 +144,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Date";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = DateTime.Parse(@"2021-03-06T10:10:00+05:30");
 
@@ -158,7 +158,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.TemperatureCelsius";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = 24;
 
@@ -172,7 +172,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Summary.Climate[4]";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = "Cloudy";
 
@@ -186,7 +186,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Humidity";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             object expectedOutputJson = 79.25;
 
@@ -200,7 +200,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Guid";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             string expectedOutputJson = "00000000-0000-0000-0000-000000000000";
 
@@ -214,7 +214,7 @@ namespace JsonPathTests.test.parsers
             string jsonPath = @"$.Weather.Milliseconds";
             Json json = new Json(validJson);
 
-            object outputJson = json.Path(jsonPath);
+            object outputJson = json.Find(jsonPath);
 
             long expectedOutputJson = 1111111111;
 
