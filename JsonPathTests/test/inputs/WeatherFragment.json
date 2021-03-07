@@ -1,0 +1,27 @@
+{
+    "Guid": "00000000-0000-0000-0000-000000000000",
+    "Milliseconds": 1111111111,
+    "Date": "2021-03-06T10:10:00+05:30",
+    "Humidity": 79.25,
+    "TemperatureCelsius": 24,
+    "Summary": {
+      "Description": [
+        {
+          "Message": "Hot & Dry Afternoon"
+        },
+        {
+          "Message": "Sunny Day"
+        },
+        {
+          "Message": "Windy Evening"
+        },
+        {
+          "Message": "Humid Night"
+        },
+        {
+          "Message": "Cloudy Morning"
+        }
+      ],
+      "Climate": [ "Hot", "Sunny", "Windy", "Humid", "Cloudy" ]
+    }
+  }

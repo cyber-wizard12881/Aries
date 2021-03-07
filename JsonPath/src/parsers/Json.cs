@@ -19,6 +19,10 @@ namespace Aries
             JsonDocument jsonDocument;
             bool documentParsingResult;
             DocumentBuilder.Build(json, out jsonDocument, out documentParsingResult);
+            if (!documentParsingResult)
+            {
+                return $"Input Json is Malformed! ... hence Aborting the JsonPath Processing ...!!!";
+            }
             JsonElement prevJsonElement = jsonDocument.RootElement;
             JsonElement currJsonElement = jsonDocument.RootElement;
             for (int index = 1; index < pathTokens.Length; index++)
@@ -44,7 +48,7 @@ namespace Aries
                 {
                     Range range = new Range(1, index + 1);
                     string[] invalidTokens = pathTokens[range].ToList().Select(tk => tk.property).ToArray();
-                    return $"$.{string.Join('.', invalidTokens)} was not found in Json Document...!!!";
+                    return $"{jsonPath} was not found in Json Document...!!! Execution halted at $.{string.Join('.', invalidTokens)} ...!!!";
                 }
                 prevJsonElement = currJsonElement;
             }
@@ -52,6 +56,11 @@ namespace Aries
             if (prevJsonElement.ValueKind == JsonValueKind.Array)
             {
                return prevJsonElement.ToString();
+            }
+
+            if (prevJsonElement.ValueKind == JsonValueKind.Object)
+            {
+                return prevJsonElement.ToString();
             }
 
             if (prevJsonElement.ValueKind == JsonValueKind.Number)

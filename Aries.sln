@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aries", "Aries.csproj", "{17279D02-A4DC-4B6F-8014-6A2A157A0667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aries", "Aries.csproj", "{17279D02-A4DC-4B6F-8014-6A2A157A0667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonPath", "..\JsonPath\JsonPath.csproj", "{0D8A843B-BD07-4A04-A12B-932CD628F1ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonPathTests", "..\JsonPathTests\JsonPathTests.csproj", "{3E58EBE2-187E-4C6E-B664-0401C836E0CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{17279D02-A4DC-4B6F-8014-6A2A157A0667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17279D02-A4DC-4B6F-8014-6A2A157A0667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17279D02-A4DC-4B6F-8014-6A2A157A0667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8A843B-BD07-4A04-A12B-932CD628F1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8A843B-BD07-4A04-A12B-932CD628F1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8A843B-BD07-4A04-A12B-932CD628F1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8A843B-BD07-4A04-A12B-932CD628F1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E58EBE2-187E-4C6E-B664-0401C836E0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E58EBE2-187E-4C6E-B664-0401C836E0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E58EBE2-187E-4C6E-B664-0401C836E0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E58EBE2-187E-4C6E-B664-0401C836E0CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
